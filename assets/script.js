@@ -36,24 +36,29 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
-//dichiariamo gli arrays che conterranno i codici html
-let nomehtml=[]
-let rolehtml=[]
-let emailhtml=[]
-let imghtml=[]
-//diami agli arrays il valore degli id html
+//dichiariamo la variabile dove stamperemo le cards
+let cards=document.getElementById('cards')
+//con un ciclo for stampiamo le variabili
 for(let i=0; i<teamMembers.length; i++){
-  nomehtml[i]=document.getElementById(`card-name-${i}`)
-  rolehtml[i]=document.getElementById(`card-role-${i}`)
-  emailhtml[i]=document.getElementById(`card-email-${i}`)
-  imghtml[i]=document.getElementById(`img-${i}`)
+  cards.innerHTML+=`
+  <div class="col-6 col-xl-4 col-md-6 col-sm-4 ">
+      <div class="card m-2 bg-black text-white" style="max-width: 540px;">
+          <div class="row g-0">
+          <div class="col-md-4">
+              <div>
+                <img src="./assets/${teamMembers[i].img}" class="img-fluid rounded-start" alt="...">
+              </div>  
+          </div>
+          <div class="col-md-8 p-3">
+              <div class="card-body d-flex flex-column justify-content-between p-0 h-100">
+              <h5 class="card-title">${teamMembers[i].name}</h5>
+              <p class="card-text m-0">${teamMembers[i].role}</p>
+              <p class="card-text text-info">${teamMembers[i].email}</p>
+              </div>
+          </div>
+          </div>
+      </div>
+  </div>
+  `
 }
-//verifichiamo che il codice è stato richiamato correttamente
-console.log(nomehtml, rolehtml, emailhtml, imghtml);
-//con un altro ciclo for stampiamo i valori di TeamsMembers nel codice html
-for(let i=0; i<teamMembers.length; i++){
-  nomehtml[i].innerHTML=teamMembers[i].name
-  rolehtml[i].innerHTML=teamMembers[i].role
-  emailhtml[i].innerHTML=teamMembers[i].email
-  imghtml[i].innerHTML=`<img src="./assets/${teamMembers[i].img}" class="img-fluid rounded-start" alt="...">`
-}
+
