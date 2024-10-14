@@ -36,21 +36,21 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
-
+//dichiariamo gli arrays che conterranno i codici html
 let nomehtml=[]
 let rolehtml=[]
 let emailhtml=[]
 let imghtml=[]
-
+//diami agli arrays il valore degli id html
 for(let i=0; i<teamMembers.length; i++){
   nomehtml[i]=document.getElementById(`card-name-${i}`)
   rolehtml[i]=document.getElementById(`card-role-${i}`)
   emailhtml[i]=document.getElementById(`card-email-${i}`)
   imghtml[i]=document.getElementById(`img-${i}`)
 }
-
+//verifichiamo che il codice è stato richiamato correttamente
 console.log(nomehtml, rolehtml, emailhtml, imghtml);
-
+//con un altro ciclo for stampiamo i valori di TeamsMembers nel codice html
 for(let i=0; i<teamMembers.length; i++){
   nomehtml[i].innerHTML=teamMembers[i].name
   rolehtml[i].innerHTML=teamMembers[i].role
