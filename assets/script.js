@@ -37,3 +37,23 @@ const teamMembers = [
   }
 ];
 
+let nomehtml=[]
+let rolehtml=[]
+let emailhtml=[]
+let imghtml=[]
+
+for(let i=0; i<teamMembers.length; i++){
+  nomehtml[i]=document.getElementById(`card-name-${i}`)
+  rolehtml[i]=document.getElementById(`card-role-${i}`)
+  emailhtml[i]=document.getElementById(`card-email-${i}`)
+  imghtml[i]=document.getElementById(`img-${i}`)
+}
+
+console.log(nomehtml, rolehtml, emailhtml, imghtml);
+
+for(let i=0; i<teamMembers.length; i++){
+  nomehtml[i].innerHTML=teamMembers[i].name
+  rolehtml[i].innerHTML=teamMembers[i].role
+  emailhtml[i].innerHTML=teamMembers[i].email
+  imghtml[i].innerHTML=`<img src="./assets/${teamMembers[i].img}" class="img-fluid rounded-start" alt="...">`
+}
